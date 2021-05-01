@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sadik Sahin</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet"> 
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+</head>
+<body>
+<div id="page">
+	<div class="top-bar">
+		<span class="top1">&bull;</span>
+		<span class="top2">&bull;</span>
+		<span class="top3">&bull;</span>
+	</div>
+	<div class="container">
+		<div class="shell">
+			<span id="user"><strong id="username">sadik-sahin</strong>@manjaro:~$</span><span class="get-cv">python3.9 get_cv.py<span class="blinking-cursor" id="blinker">|</span><button class="run-button" onclick="startFunc()">Execute<strong>&crarr;</strong></button></span>
+			<p id="code1" class="italic">running...</p>
+			<p id="code2" class="italic">-.- DONE -.-</p>
+			<br>
+			<p id="code3">get_info()<button class="run-button" onclick="getInfoFunc()">Execute<strong>&crarr;</strong></button></p>
+		</div>
+		<div id="info">
+			
+			
+			<div class="info-user center">
+				<img id="pp" src="little_img.jpeg" alt="Sadık Şahin">
+				<p id="title-label">Coder, Legal Intern, CSE Student</p>
+				<br>
+			</div>
+		</div>
+		<div class="skills">
+			<p id="code4">get_skills()<button class="run-button" onclick="getSkillsFunc()">Execute<strong>&crarr;</strong></button></p>
+			<div id="skills-user">
+				<ul id="skills-list">
+					<li>Python</li><span class="skill-bagde">&oplus;&oplus;&oplus;&oplus;&ominus;</span>
+					<li>Django</li><span class="skill-bagde">&oplus;&oplus;&oplus;&ominus;&ominus;</span>
+					<li>Html</li><span class="skill-bagde">&oplus;&oplus;&oplus;&oplus;&ominus;</span>
+					<li>Css</li><span class="skill-bagde">&oplus;&oplus;&oplus;&oplus;&ominus;</span>
+					<li id="skill-last-two">Bootstrap</li><span class="skill-bagde">&oplus;&oplus;&oplus;&oplus;&ominus;</span>
+					<li>C</li><span class="skill-bagde">&oplus;&oplus;&ominus;&ominus;&ominus;</span>
+				</ul>
+				<br>
+			</div>
+		</div>
+		<div class="contact">
+			<p id="code5">get_contact()<button class="run-button" onclick="getContactFunc()">Execute<strong>&crarr;</strong></button></p>
+			<div class="center" id="contact-list">
+				<div class="linkedin"><a href="https://www.linkedin.com/in/sad%C4%B1k-%C5%9Fahin-bb456a1b2/"><img src="linkedin.svg" class="social-img"></a></div>
+				<div class="github"><a href="https://github.com/sadiksa"><img src="github.png" class="social-img"></a></div>
+				<div class="instagram"><a href="https://www.instagram.com/sadik_.sahin/"><img src="instagram.svg" class="social-img"></a></div>
+
+		</div>
+		<br>
+		<div class="exit">
+			<p id="exit-button">exit()<button class="run-button" onclick="exitFunc()">Execute<strong>&crarr;</strong></button></p>
+			<p id="goodbye" class="italic">thank you for visiting, goodbye... <br>
+				exitted from get_cv.py <br>
+
+			</p><br>
+			<div id="user-bottom">
+              		<span id="user-last"><strong id="username-last">sadik-sahin</strong>@manjaro:~$</span><span class="get-cv">python3.9 get_cv.py<span class="blinking-cursor">|</span></span>
+            </div>
+		</div>
+	</div>
+</div>
+<script>
+function startFunc() {
+	document.getElementById("blinker").style.visibility = "hidden";
+	setTimeout(() => { document.getElementById("code1").style.visibility = "visible"; }, 200);
+	setTimeout(() => { document.getElementById("code2").style.visibility = "visible"; }, 400);
+	setTimeout(() => { document.getElementById("code3").style.visibility = "visible"; }, 600);
+	
+	
+	
+	
+}
+function getInfoFunc() {
+	
+	setTimeout(() => { document.getElementById("info").style.visibility = "visible"; }, 300);
+	setTimeout(() => { document.getElementById("code4").style.visibility = "visible"; }, 600);
+	
+}
+function getSkillsFunc() {
+	
+	setTimeout(() => { document.getElementById("skills-user").style.visibility = "visible"; }, 300);
+	setTimeout(() => { 
+		var elmnt = document.getElementById("title-label");
+  		elmnt.scrollIntoView({behavior: "smooth",});
+  	}, 350);
+	
+	setTimeout(() => { document.getElementById("code5").style.visibility = "visible"; }, 1000);
+	
+	
+	
+}
+function getContactFunc() {
+	
+	setTimeout(() => { document.getElementById("contact-list").style.visibility = "visible"; }, 300);
+	setTimeout(() => { 
+		var elmnt = document.getElementById("skill-last-two");
+  		elmnt.scrollIntoView({behavior: "smooth",});
+  	}, 350);
+	setTimeout(() => { document.getElementById("exit-button").style.visibility = "visible"; }, 1000);
+	
+	
+	
+}
+function exitFunc() {
+	
+	setTimeout(() => { document.getElementById("goodbye").style.visibility = "visible"; }, 400);
+	setTimeout(() => { document.getElementById("user-bottom").style.visibility = "visible"; }, 600);
+	
+	
+	
+	
+	
+}
+</script>
+</body>
+</html>

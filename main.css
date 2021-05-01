@@ -1,0 +1,179 @@
+html {
+	height: 100%;
+}
+body {
+	background-color: #f21170;
+	margin: 0 auto;
+	color: white;
+	font-family: 'Source Code Pro', monospace;
+	height: 100%;
+
+}
+#page {
+	margin: auto;
+	
+
+}
+.top-bar {
+	text-align: right;
+	background-color: grey;
+	border-style: none solid none solid;
+	border-width: 1rem;
+	border-color: grey;
+	width: 54rem;
+	padding: 0px 10px;
+	margin: auto;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+
+}
+.top-bar span {
+	font-weight: bold;
+	font-size: 2rem;
+}
+.top1 {
+	color: #81b214;
+}
+.top2 {
+	color: #ffcc29;
+}
+.top3 {
+	color: #f58634;
+}
+.container {
+	margin: auto;
+	padding: 10px;
+	width: 54rem;
+	background-color: #72147e;
+	border-style: none solid solid solid;
+	border-width: 1rem;
+	border-color: grey;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+
+}
+.italic {
+	font-style: italic;
+}
+#username {
+	color: #03fc07;
+}
+#user {
+	color: #ff5200;
+}
+.run-button {
+	padding: 3px;
+	background-color: #ff5200;
+	border: 0px;
+	border-radius: 5px;
+	color: white;
+}
+.run-button:hover {
+	background-color: #fa9905;
+}
+#pp {
+	border-radius: 100%;
+	border: solid 5px;
+}
+.center {
+	margin: auto;
+	text-align: center;
+}
+#skills-list {
+	list-style-type: none;
+}
+#skills-list li:before{
+	content: ">>";
+	color: #03fc07;
+}
+.skill-bagde {
+	color: #ff5200;
+	font-size: 48px;
+
+}
+#skills-user {
+	width: 20%;
+	margin: 0 auto;
+
+}
+.linkedin, .github, .instagram {
+	display: inline-block;
+}
+.linkedin img, .github img, .instagram img {
+	width: 5rem;
+	padding: 20px;
+
+}
+
+.social-img {
+	filter: invert(1);
+} 
+.social-img:hover {
+	filter: invert(40%) sepia(85%) saturate(3101%) hue-rotate(359deg) brightness(99%) contrast(107%);
+} 
+#username-last {
+	color: #03fc07;
+}
+#user-last {
+	color: #ff5200;
+}
+#code1, #code2, #code3, #info, #code4, #skills-user, #code5, #contact-list, #exit-button, #goodbye, #user-bottom {
+	visibility: hidden;
+}
+
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 1rem;
+  color: white;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
