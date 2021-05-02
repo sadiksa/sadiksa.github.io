@@ -106,7 +106,7 @@ body {
 }
 
 .social-img {
-	filter: invert(1);
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(256deg) brightness(106%) contrast(106%);
 } 
 .social-img:hover {
 	filter: invert(40%) sepia(85%) saturate(3101%) hue-rotate(359deg) brightness(99%) contrast(107%);
