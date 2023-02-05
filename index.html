@@ -28,7 +28,7 @@
 			
 			<div class="info-user center">
 				<img id="pp" src="little_img.jpeg" alt="Sadık Şahin">
-				<p id="title-label">Coder, Legal Intern, CSE Student</p>
+				<p id="title-label">Software Developer, CSE Student</p>
 				<br>
 			</div>
 		</div>
@@ -36,13 +36,13 @@
 			<p id="code4">>>>get_skills()<button class="run-button" onclick="getSkillsFunc()">Execute<strong>&crarr;</strong></button></p>
 			<div id="skills-user">
 				<ul id="skills-list">
-					<li>Python</li><span class="skill-bagde">&oplus;&oplus;&oplus;&oplus;&ominus;</span>
-					<li>Django</li><span class="skill-bagde">&oplus;&oplus;&oplus;&ominus;&ominus;</span>
-					<li>Html</li><span class="skill-bagde">&oplus;&oplus;&oplus;&oplus;&ominus;</span>
-					<li>Css</li><span class="skill-bagde">&oplus;&oplus;&oplus;&oplus;&ominus;</span>
+					<li>C#</li><span class="skill-bagde">&oplus;&oplus;&oplus;&oplus;&ominus;</span>
+					<li>.Net</li><span class="skill-bagde">&oplus;&oplus;&oplus;&ominus;&ominus;</span>
+					<li>Angular</li><span class="skill-bagde">&oplus;&oplus;&oplus;&ominus;&ominus;</span>
+					<li>GIT</li><span class="skill-bagde">&oplus;&oplus;&oplus;&ominus;&ominus;</span>
 					<li>Javascript</li><span class="skill-bagde">&oplus;&oplus;&oplus;&ominus;&ominus;</span>
 					<li id="skill-last-two">Bootstrap</li><span class="skill-bagde">&oplus;&oplus;&oplus;&oplus;&ominus;</span>
-					<li>C</li><span class="skill-bagde">&oplus;&oplus;&ominus;&ominus;&ominus;</span>
+					<li>Java</li><span class="skill-bagde">&oplus;&oplus;&ominus;&ominus;&ominus;</span>
 				</ul>
 				<br>
 			</div>
@@ -71,54 +71,37 @@
 <script>
 function startFunc() {
 	document.getElementById("blinker").style.visibility = "hidden";
-	setTimeout(() => { document.getElementById("code1").style.visibility = "visible"; }, 200);
-	setTimeout(() => { document.getElementById("code2").style.visibility = "visible"; }, 400);
-	setTimeout(() => { document.getElementById("code3").style.visibility = "visible"; }, 600);
-	
-	
-	
-	
+	makeVisible("code1", 200)
+	makeVisible("code2", 400)
+	makeVisible("code3", 600)
 }
 function getInfoFunc() {
-	
-	setTimeout(() => { document.getElementById("info").style.visibility = "visible"; }, 300);
-	setTimeout(() => { document.getElementById("code4").style.visibility = "visible"; }, 600);
-	
+	makeVisible("info", 300)
+	makeVisible("code4", 600)
 }
 function getSkillsFunc() {
-	
-	setTimeout(() => { document.getElementById("skills-user").style.visibility = "visible"; }, 300);
-	setTimeout(() => { 
-		var elmnt = document.getElementById("title-label");
-  		elmnt.scrollIntoView({behavior: "smooth",});
-  	}, 350);
-	
-	setTimeout(() => { document.getElementById("code5").style.visibility = "visible"; }, 1000);
-	
-	
-	
+	makeVisible("skills-user", 300)
+	makeScroll("title-label", 350)
+	makeVisible("code5", 1000)
+
 }
 function getContactFunc() {
-	
-	setTimeout(() => { document.getElementById("contact-list").style.visibility = "visible"; }, 300);
-	setTimeout(() => { 
-		var elmnt = document.getElementById("skill-last-two");
-  		elmnt.scrollIntoView({behavior: "smooth",});
-  	}, 350);
-	setTimeout(() => { document.getElementById("exit-button").style.visibility = "visible"; }, 1000);
-	
-	
-	
+	makeVisible("contact-list", 300)
+	makeScroll("skill-last-two", 350)
+	  makeVisible("exit-button", 1000)
 }
 function exitFunc() {
-	
-	setTimeout(() => { document.getElementById("goodbye").style.visibility = "visible"; }, 400);
-	setTimeout(() => { document.getElementById("user-bottom").style.visibility = "visible"; }, 600);
-	
-	
-	
-	
-	
+	makeVisible("goodbye", 400)
+	makeVisible("user-bottom", 600)
+}
+function makeVisible(elementId, transitionInMilliSeconds){
+	setTimeout(() => { document.getElementById(elementId).style.visibility = "visible"; }, transitionInMilliSeconds);
+}
+function makeScroll(elementId, transitionInMilliSeconds){
+	setTimeout(() => { 
+		var elmnt = document.getElementById(elementId);
+  		elmnt.scrollIntoView({behavior: "smooth",});
+  	}, transitionInMilliSeconds);
 }
 </script>
 </body>
