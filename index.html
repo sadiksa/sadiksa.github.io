@@ -46,7 +46,7 @@
                     <li>C#</li>
                     <li>.Net</li>
                     <li>Docker</li>
-                    <li>Kubernetes</li>
+                    <li>Kubernetes/CKAD</li>
                     <li>AWS</li>
                     <li>Angular</li>
                     <li>GIT</li>
@@ -83,7 +83,23 @@
     </div>
 </div>
 <script>
+    let step = 0;
+    document.addEventListener('keydown', function (event) {
+        if (step === 0) {
+            startFunc();
+        } else if (step === 1) {
+            getInfoFunc();
+        } else if (step === 2) {
+            getSkillsFunc();
+        } else if (step === 3) {
+            getContactFunc();
+        } else if (step === 4) {
+            exitFunc();
+        }
+    });
+
     function startFunc() {
+        step = 1;
         document.getElementById("blinker").style.visibility = "hidden";
         makeVisible("code1", 200)
         makeVisible("code2", 400)
@@ -91,11 +107,13 @@
     }
 
     function getInfoFunc() {
+        step = 2;
         makeVisible("info", 300)
         makeVisible("code4", 600)
     }
 
     function getSkillsFunc() {
+        step = 3;
         makeVisible("skills-user", 300)
         makeScroll("title-label", 350)
         makeVisible("code5", 1000)
@@ -103,12 +121,14 @@
     }
 
     function getContactFunc() {
+        step = 4;
         makeVisible("contact-list", 300)
         makeScroll("skill-last-two", 350)
         makeVisible("exit-button", 1000)
     }
 
     function exitFunc() {
+        step = 5;
         makeVisible("goodbye", 400)
         makeVisible("user-bottom", 600)
     }
