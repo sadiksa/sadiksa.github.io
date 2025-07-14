@@ -1,179 +1,193 @@
-html {
-	height: 100%;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Code Pro', monospace;
+    color: white;
+    background-color: #f21170;
 }
-body {
-	background-color: #f21170;
-	margin: 0 auto;
-	color: white;
-	font-family: 'Source Code Pro', monospace;
-	height: 100%;
 
-}
 #page {
-	margin: auto;
-	
-
+    margin: auto;
+    min-height: 100vh;
 }
+
+.top-bar, .container {
+    max-width: 900px;
+    width: 95%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
 .top-bar {
-	text-align: right;
-	background-color: grey;
-	border-style: none solid none solid;
-	border-width: 1rem;
-	border-color: grey;
-	width: 54rem;
-	padding: 0px 10px;
-	margin: auto;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: grey;
+    border-width: 1rem 1rem 0 1rem;
+    border-style: solid;
+    border-color: grey;
+    padding: 0 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    min-height: 60px;
+    position: relative;
 }
+
 .top-bar span {
-	font-weight: bold;
-	font-size: 2rem;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-left: 0.5rem;
 }
-.top1 {
-	color: #81b214;
-}
-.top2 {
-	color: #ffcc29;
-}
-.top3 {
-	color: #f58634;
-}
+
+.top1 { color: #81b214; }
+.top2 { color: #ffcc29; }
+.top3 { color: #f58634; }
+
 .container {
-	margin: auto;
-	padding: 10px;
-	width: 54rem;
-	background-color: #72147e;
-	border-style: none solid solid solid;
-	border-width: 1rem;
-	border-color: grey;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
+    padding: 10px;
+    background-color: #72147e;
+    border-width: 0 1rem 1rem 1rem;
+    border-style: solid;
+    border-color: grey;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-sizing: border-box;
+}
 
+.shell, .card {
+    width: 100%;
+    box-sizing: border-box;
 }
-.italic {
-	font-style: italic;
-}
-#username {
-	color: #03fc07;
-}
-#user {
-	color: #ff5200;
-}
+
+.italic { font-style: italic; }
+#username, #username-last { color: #03fc07; }
+#user, #user-last { color: #ff5200; }
+
 .run-button {
-	padding: 3px;
-	background-color: #ff5200;
-	border: 0px;
-	border-radius: 5px;
-	color: white !important;
+    padding: 6px 12px;
+    background-color: #ff5200;
+    border: none;
+    border-radius: 5px;
+    color: white !important;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 8px;
 }
-.run-button:hover {
-	background-color: #fa9905;
-}
+.run-button:hover { background-color: #fa9905; }
+
 #pp {
-	border-radius: 100%;
-	border: solid 5px;
+    border: none;
+    height: 120px;
+    width: 120px;
+    max-width: 100%;
+    border-radius: 50%;
 }
-.center {
-	margin: auto;
-	text-align: center;
-}
+
+.center { margin: auto; text-align: center; }
+
 #skills-list {
-	list-style-type: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
-#skills-list li:before{
-	content: ">>";
-	color: #03fc07;
+#skills-list li:before {
+    content: ">>";
+    color: #03fc07;
+    margin-right: 6px;
 }
-.skill-bagde {
-	color: #ff5200;
-	font-size: 48px;
 
+.skill-badge {
+    color: #ff5200;
+    font-size: 2rem;
 }
+
 #skills-user {
-	width: 20%;
-	margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
 
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
-.linkedin, .github, .instagram {
-	display: inline-block;
-}
+
 .linkedin img, .github img, .instagram img {
-	width: 5rem;
-	padding: 20px;
-
+    width: 3rem;
+    padding: 10px;
 }
 
 .social-img {
-	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(256deg) brightness(106%) contrast(106%);
-} 
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(256deg) brightness(106%) contrast(106%);
+    transition: filter 0.2s;
+}
 .social-img:hover {
-	filter: invert(40%) sepia(85%) saturate(3101%) hue-rotate(359deg) brightness(99%) contrast(107%);
-} 
-#username-last {
-	color: #03fc07;
-}
-#user-last {
-	color: #ff5200;
-}
-#code1, #code2, #code3, #info, #code4, #skills-user, #code5, #contact-list, #exit-button, #goodbye, #user-bottom {
-	visibility: hidden;
+    filter: invert(40%) sepia(85%) saturate(3101%) hue-rotate(359deg) brightness(99%) contrast(107%);
 }
 
+#code1, #code2, #code3, #info, #code4, #skills-user, #code5, #contact-list, #exit-button, #goodbye, #user-bottom {
+    visibility: hidden;
+}
 
 .blinking-cursor {
-  font-weight: 100;
-  font-size: 1rem;
-  color: white;
-  -webkit-animation: 1s blink step-end infinite;
-  -moz-animation: 1s blink step-end infinite;
-  -ms-animation: 1s blink step-end infinite;
-  -o-animation: 1s blink step-end infinite;
-  animation: 1s blink step-end infinite;
+    font-weight: 100;
+    font-size: 1rem;
+    color: white;
+    animation: blink 1s step-end infinite;
 }
 
-@keyframes "blink" {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
+@keyframes blink {
+    from, to { color: transparent; }
+    50% { color: white; }
 }
 
-@-moz-keyframes blink {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
+/* Responsive styles */
+@media (max-width: 1000px) {
+    .top-bar, .container {
+        max-width: 100%;
+        width: 98%;
+        padding: 0 2vw;
+        border-width: 0.5rem;
+    }
+    .top-bar {
+        min-height: 40px;
+    }
+    #pp {
+        height: 80px;
+        width: 80px;
+    }
+    .linkedin img, .github img, .instagram img {
+        width: 2.2rem;
+        padding: 6px;
+    }
 }
 
-@-webkit-keyframes "blink" {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-}
-
-@-ms-keyframes "blink" {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-}
-
-@-o-keyframes "blink" {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
+@media (max-width: 600px) {
+    .top-bar, .container {
+        max-width: 100%;
+        width: 100%;
+        padding: 0 1vw;
+        border-radius: 0;
+        border-width: 0.2rem;
+    }
+    .top-bar {
+        min-height: 28px;
+    }
+    #pp {
+        height: 60px;
+        width: 60px;
+    }
+    .linkedin img, .github img, .instagram img {
+        width: 1.5rem;
+        padding: 3px;
+    }
+    .run-button {
+        font-size: 0.9rem;
+        padding: 4px 8px;
+    }
+    #skills-user {
+        max-width: 98vw;
+    }
 }
