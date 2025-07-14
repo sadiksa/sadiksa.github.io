@@ -3,10 +3,10 @@
 <head>
     <title>Sadik Sahin</title>
     <link rel="stylesheet" type="text/css" href="main.css">
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div id="page">
@@ -17,53 +17,55 @@
     </div>
     <div class="container">
         <div class="shell">
-            <a href="https://github.com/sadiksa"><span id="user"><strong
-                    id="username">sadik-sahin</strong>@manjaro:~$</span></a><span
-                class="get-cv">python3.9 get_cv.py<span class="blinking-cursor" id="blinker">|</span><button
-                class="run-button" onclick="startFunc()">Execute<strong>&crarr;</strong></button></span>
+            <a href="https://github.com/sadiksa"><span id="user"><strong id="username">sadik-sahin</strong>@manjaro:~$</span></a>
+            <span class="get-cv">python3.9 get_cv.py<span class="blinking-cursor" id="blinker">|</span><button class="run-button" onclick="startFunc()">Execute<strong>&crarr;</strong></button></span>
             <p id="code1" class="italic">running...</p>
             <p id="code2" class="italic">DONE-.-</p>
-
             <p id="code3">>>>get_info()
                 <button class="run-button" onclick="getInfoFunc()">Execute<strong>&crarr;</strong></button>
             </p>
         </div>
-        <div id="info">
-
-
+        <div id="info" class="card">
             <div class="info-user center">
                 <img id="pp" src="little_img.jpeg" alt="Sadık Şahin">
-                <p id="title-label">Software Developer, DevOps Engineer</p>
+                <p id="title-label">DevOps-Cloud Engineer</p>
                 <br>
             </div>
         </div>
-        <div class="skills">
+        <div class="skills card">
             <p id="code4">>>>get_skills()
                 <button class="run-button" onclick="getSkillsFunc()">Execute<strong>&crarr;</strong></button>
             </p>
             <div id="skills-user">
                 <ul id="skills-list">
+                    <li>Kubernetes</li>
+                    <li>Containerization</li>
+                    <li>CKA</li>
+                    <li>CKAD</li>
+                    <li>Linux</li>
+                    <li>AWS</li>
+                    <li>Istio</li>
+                    <li>Hashicorp Vault</li>
+                    <li>Keycloak</li>
+                    <li>Jenkins</li>
+                    <li>Azure Devops Pipelines, Bitbucket CLI</li>
                     <li>C#</li>
                     <li>.Net</li>
-                    <li>Docker</li>
-                    <li>Kubernetes/CKAD</li>
-                    <li>AWS</li>
                     <li>Angular</li>
                     <li>GIT</li>
                 </ul>
                 <br>
             </div>
         </div>
-        <div class="contact">
+        <div class="contact card">
             <p id="code5">>>>get_contact()
                 <button class="run-button" onclick="getContactFunc()">Execute<strong>&crarr;</strong></button>
             </p>
             <div class="center" id="contact-list">
-                <div class="linkedin"><a href="https://www.linkedin.com/in/sad%C4%B1k-%C5%9Fahin-bb456a1b2/"><img
-                        src="linkedin.svg" class="social-img"></a></div>
-                <div class="github"><a href="https://github.com/sadiksa"><img src="github.png" class="social-img"></a>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/sad%C4%B1k-%C5%9Fahin-bb456a1b2/" class="linkedin"><img src="linkedin.svg" class="social-img" alt="LinkedIn"></a>
+                    <a href="https://github.com/sadiksa" class="github"><img src="github.png" class="social-img" alt="GitHub"></a>
                 </div>
-
             </div>
             <br>
             <div class="exit">
@@ -72,78 +74,102 @@
                 </p>
                 <p id="goodbye" class="italic">thank you for visiting, goodbye... <br>
                     exitted from get_cv.py <br>
-
                 </p><br>
                 <div id="user-bottom">
-                    <span id="user-last"><strong id="username-last">sadik-sahin</strong>@manjaro:~$</span><span
-                        class="get-cv"><span class="blinking-cursor">|</span></span>
+                    <span id="user-last"><strong id="username-last">sadik-sahin</strong>@manjaro:~$</span><span class="get-cv"><span class="blinking-cursor">|</span></span>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <script>
-    let step = 0;
+    const STEP_START = 0;
+    const STEP_INFO = 1;
+    const STEP_SKILLS = 2;
+    const STEP_CONTACT = 3;
+    const STEP_EXIT = 4;
+    let step = STEP_START;
+
     document.addEventListener('keydown', function (event) {
-        if (step === 0) {
-            startFunc();
-        } else if (step === 1) {
-            getInfoFunc();
-        } else if (step === 2) {
-            getSkillsFunc();
-        } else if (step === 3) {
-            getContactFunc();
-        } else if (step === 4) {
-            exitFunc();
+        switch (step) {
+            case STEP_START:
+                startFunc();
+                break;
+            case STEP_INFO:
+                getInfoFunc();
+                break;
+            case STEP_SKILLS:
+                getSkillsFunc();
+                break;
+            case STEP_CONTACT:
+                getContactFunc();
+                break;
+            case STEP_EXIT:
+                exitFunc();
+                break;
         }
     });
 
     function startFunc() {
-        step = 1;
-        document.getElementById("blinker").style.visibility = "hidden";
-        makeVisible("code1", 200)
-        makeVisible("code2", 400)
-        makeVisible("code3", 600)
+        step = STEP_INFO;
+        setVisibility("blinker", false);
+        makeVisible("code1", 200);
+        makeVisible("code2", 400);
+        makeVisible("code3", 600);
     }
 
     function getInfoFunc() {
-        step = 2;
-        makeVisible("info", 300)
-        makeVisible("code4", 600)
+        step = STEP_SKILLS;
+        makeVisible("info", 300);
+        makeVisible("code4", 600);
     }
 
     function getSkillsFunc() {
-        step = 3;
-        makeVisible("skills-user", 300)
-        makeScroll("title-label", 350)
-        makeVisible("code5", 1000)
-
+        step = STEP_CONTACT;
+        makeVisible("skills-user", 300);
+        makeScroll("title-label", 350);
+        makeVisible("code5", 1000);
     }
 
     function getContactFunc() {
-        step = 4;
-        makeVisible("contact-list", 300)
-        makeScroll("skill-last-two", 350)
-        makeVisible("exit-button", 1000)
+        step = STEP_EXIT;
+        makeVisible("contact-list", 300);
+        // Only scroll if element exists
+        if (document.getElementById("skill-last-two")) {
+            makeScroll("skill-last-two", 350);
+        }
+        makeVisible("exit-button", 1000);
     }
 
     function exitFunc() {
-        step = 5;
-        makeVisible("goodbye", 400)
-        makeVisible("user-bottom", 600)
+        step = STEP_EXIT + 1;
+        makeVisible("goodbye", 400);
+        makeVisible("user-bottom", 600);
     }
 
     function makeVisible(elementId, transitionInMilliSeconds) {
         setTimeout(() => {
-            document.getElementById(elementId).style.visibility = "visible";
+            const el = document.getElementById(elementId);
+            if (el) {
+                el.style.visibility = "visible";
+            }
         }, transitionInMilliSeconds);
     }
 
     function makeScroll(elementId, transitionInMilliSeconds) {
         setTimeout(() => {
-            var elmnt = document.getElementById(elementId);
-            elmnt.scrollIntoView({behavior: "smooth",});
+            const elmnt = document.getElementById(elementId);
+            if (elmnt) {
+                elmnt.scrollIntoView({behavior: "smooth"});
+            }
         }, transitionInMilliSeconds);
+    }
+
+    function setVisibility(elementId, visible) {
+        const el = document.getElementById(elementId);
+        if (el) {
+            el.style.visibility = visible ? "visible" : "hidden";
+        }
     }
 </script>
 </body>
